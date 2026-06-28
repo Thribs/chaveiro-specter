@@ -61,7 +61,14 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+h1 + p {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  max-width: 620px;
+  margin: 0.2rem auto 0;
+  padding: 0 1rem;
+}
 h2 {
   font-family: "Sora", sans-serif;
   text-align: center;
