@@ -1,0 +1,60 @@
+/* remove a estilização padrão de links no nome do cliente */
+a.testemunho {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+/* garante que o h3 tenha posicionamento relativo para o balão se alinhar a ele */
+a.testemunho h3 {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  display: inline-block;
+}
+
+/* estiliza o balão de texto (Tooltip) */
+a.testemunho h3::after {
+  content: attr(data-tooltip); /* puxa o texto do HTML automaticamente */
+  position: absolute;
+  bottom: 125%; /* posiciona acima do nome */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+/* cria a setinha do balão */
+a.testemunho h3::before {
+  content: "";
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+/* efeito de Hover: mostra o balão e a setinha */
+a.testemunho h3:hover::after,
+a.testemunho h3:hover::before {
+  opacity: 1;
+}
+
+/* ajuste sutil no transform para dar um efeito de "subida" ao aparecer */
+a.testemunho h3:hover::after {
+  transform: translateX(-50%) translateY(-4px);
+}
