@@ -253,3 +253,76 @@ a.testemunho h3:hover::after {
   transform: scale(1.08);
   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
 }
+
+/* ===== entrada: logo + apresentação ===== */
+.entrada {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.2rem 1.2rem 0.4rem;
+  text-align: center;
+}
+.entrada-logotipo {
+  width: clamp(150px, 33vw, 210px);
+  height: auto;
+  display: block;
+  margin: 0 auto 1.1rem;
+  /* brilho azul seguindo a silhueta (logo PNG transparente) */
+  filter: drop-shadow(0 10px 26px rgba(51, 177, 255, 0.38));
+}
+.entrada h1 {
+  padding: 0.3rem 1.2rem 0.2rem; /* a logo já ocupa o topo */
+}
+.entrada-subtitulo {
+  color: var(--azul-destaque-claro);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 2.3vw, 1.1rem);
+  max-width: 620px;
+  margin: 1rem auto 0;
+}
+.entrada-apresentacao {
+  color: var(--cor-texto-suave);
+  font-size: clamp(0.98rem, 2.4vw, 1.08rem);
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 1.4rem auto 0;
+}
+.entrada-diferenciais {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 1.6rem auto 0;
+  max-width: 680px;
+}
+.entrada-diferenciais span {
+  background: linear-gradient(
+    180deg,
+    var(--fundo-cartao),
+    var(--fundo-cartao-inferior)
+  );
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+}
+.entrada-chamada {
+  display: inline-block;
+  margin-top: 1.9rem;
+  background: #25d366;
+  color: #07210f;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px -8px rgba(37, 211, 102, 0.6);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.entrada-chamada:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -8px rgba(37, 211, 102, 0.7);
+}
